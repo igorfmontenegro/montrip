@@ -8,10 +8,8 @@ export function Header() {
     function handleScroll() {
       const scrollTop = document.documentElement.scrollTop
       if (scrollTop > 80 && scrolled === false) {
-        console.log('Maior que 0')
         setScrolled(true)
       } else if (scrollTop < 80 && scrolled === true) {
-        console.log('Menor que 0')
         setScrolled(false)
       }
     }

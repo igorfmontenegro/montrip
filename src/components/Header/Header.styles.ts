@@ -19,6 +19,7 @@ export const Container = styled.div<ContainerProps>`
 
   a {
     color: #fff;
+    font-size: 1.1em;
     text-decoration: none;
   }
 
