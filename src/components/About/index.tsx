@@ -25,7 +25,7 @@ export function About() {
           </span>{' '}
           Sua próxima aventura aguarda.
         </p>{' '}
-        <br />
+        <br /> <br />
         <p>
           {' '}
           <span>Vamos viajar juntos!</span>

@@ -11,13 +11,18 @@ export const Container = styled.section`
 `
 
 export const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
   max-width: 1340px;
+  height: 100%;
   margin: auto;
-  padding: 150px 30px 0px 30px;
+  padding: 0px 30px;
   color: #1b4a78;
 
   h1 {
-    line-height: 25vh;
+    line-height: 20vh;
     font-size: 2em;
   }
 
