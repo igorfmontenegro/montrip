@@ -25,7 +25,7 @@ export function Budgets() {
   return (
     <Container>
       <Content>
-        <h2> Solicite o seu orçamento! </h2>
+        <h2> SOLICITE O SEU ORÇAMENTO! </h2>
 
         <Box>
           <Option>
@@ -117,7 +117,7 @@ export function Budgets() {
             <CardIcon>
               <TbPigMoney />
             </CardIcon>
-            <p> Variedade de passagens que cabem no seu bolso! </p>
+            <p> Viajar não precisa ser caro! Opções que cabem no seu bolso. </p>
           </Card>
         </CardsContainer>
       </Content>

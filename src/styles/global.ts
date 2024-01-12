@@ -9,7 +9,7 @@ export const GlobalStyles = createGlobalStyle`
 }
 
 #root{
-    height: 500vh;
+    height: 400vh;
     overflow-x: hidden;
     font-family: 'Poppins', sans-serif;
 }
