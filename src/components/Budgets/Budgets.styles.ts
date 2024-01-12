@@ -79,9 +79,29 @@ export const CardsContainer = styled.div`
 `
 
 export const Card = styled.div`
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: space-evenly;
   height: 230px;
   width: 250px;
   border-radius: 25px;
   background-color: #fff;
   box-shadow: 2px 2px 5px #000;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  p {
+    color: #00405c;
+    width: 200px;
+  }
+`
+
+export const CardIcon = styled.div`
+  font-size: 2em;
+  color: #00405c;
+  text-align: center;
 `

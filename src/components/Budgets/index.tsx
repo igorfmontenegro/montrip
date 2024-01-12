@@ -1,7 +1,9 @@
+import { useState, ChangeEvent } from 'react'
 import { InputBudgets } from '../InputBudgets'
 import {
   Box,
   Card,
+  CardIcon,
   CardsContainer,
   Container,
   Content,
@@ -10,7 +12,16 @@ import {
   Segment
 } from './Budgets.styles'
 
+import { ImAirplane, ImAlarm } from 'react-icons/im'
+import { TbPigMoney } from 'react-icons/tb'
+
 export function Budgets() {
+  const [selectedOption, setSelectedOption] = useState('ida')
+
+  const handleOptionChange = (event: ChangeEvent<HTMLSelectElement>) => {
+    setSelectedOption(event.target.value)
+  }
+
   return (
     <Container>
       <Content>
@@ -27,9 +38,13 @@ export function Budgets() {
               <option value="5+"> Outra quantidade </option>
             </select>
 
-            <select name="trecho">
-              <option value="Ida"> Ida </option>
-              <option value="Ida_e_volta"> Ida e volta </option>
+            <select
+              name="trecho"
+              value={selectedOption}
+              onChange={handleOptionChange}
+            >
+              <option value="ida"> Ida </option>
+              <option value="ida_e_volta"> Ida e volta </option>
             </select>
           </Option>
 
@@ -55,13 +70,15 @@ export function Budgets() {
               placeholder="Selecione a data"
               widthInput="200px"
             />
-            <InputBudgets
-              label="Volta"
-              type="text"
-              name="data_volta"
-              placeholder="Selecione a data"
-              widthInput="200px"
-            />
+            {selectedOption === 'ida_e_volta' && (
+              <InputBudgets
+                label="Volta"
+                type="text"
+                name="data_volta"
+                placeholder="Selecione a data"
+                widthInput="200px"
+              />
+            )}
           </Segment>
 
           <Data>
@@ -85,16 +102,22 @@ export function Budgets() {
 
         <CardsContainer>
           <Card>
-            <div></div>
-            <div></div>
+            <CardIcon>
+              <ImAirplane />
+            </CardIcon>
+            <p> Passagens áreas para qualquer lugar do mundo!</p>
           </Card>
           <Card>
-            <div></div>
-            <div></div>
+            <CardIcon>
+              <ImAlarm />
+            </CardIcon>
+            <p>Agilidade! Receba seu orçamento em poucas horas.</p>
           </Card>
           <Card>
-            <div></div>
-            <div></div>
+            <CardIcon>
+              <TbPigMoney />
+            </CardIcon>
+            <p> Variedade de passagens que cabem no seu bolso! </p>
           </Card>
         </CardsContainer>
       </Content>
