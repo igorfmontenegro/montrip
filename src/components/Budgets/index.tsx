@@ -39,7 +39,7 @@ export function Budgets() {
     data_ida: string
     data_volta: string
     email: string
-    celular: number
+    celular: string
   }
 
   const onSubmit: SubmitHandler<FormData> = (data) => console.log(data)
@@ -74,7 +74,7 @@ export function Budgets() {
             <ContainerInput width="270px">
               <label> Origem </label>
               <input
-                {...register('origem')}
+                {...register('origem', { required: true })}
                 type="text"
                 placeholder="Cidade ou aeroporto"
               />
@@ -82,7 +82,7 @@ export function Budgets() {
             <ContainerInput width="270px">
               <label> Destino </label>
               <input
-                {...register('destino')}
+                {...register('destino', { required: true })}
                 type="text"
                 placeholder="Cidade ou aeroporto"
               />
@@ -90,7 +90,7 @@ export function Budgets() {
             <ContainerInput width="200px">
               <label> Ida </label>
               <input
-                {...register('data_ida')}
+                {...register('data_ida', { required: true })}
                 type="date"
                 placeholder="Selecione a data"
               />
@@ -111,7 +111,7 @@ export function Budgets() {
             <ContainerInput width="450px">
               <label> E-mail </label>
               <input
-                {...register('email')}
+                {...register('email', { required: true })}
                 type="email"
                 placeholder="Digite o seu e-mail"
               />
@@ -119,7 +119,7 @@ export function Budgets() {
             <ContainerInput width="250px">
               <label> Celular </label>
               <input
-                {...register('celular')}
+                {...register('celular', { required: true, minLength: 15 })}
                 value={phone}
                 onChange={handleInputChange}
                 type="tel"
