@@ -12,7 +12,7 @@ import Madrid from '../../assets/madrid.png'
 
 export function Destiny() {
   return (
-    <Container>
+    <Container id="destiny">
       <Content>
         <Subtitle>
           <span> Os mais vendidos</span>

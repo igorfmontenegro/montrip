@@ -16,14 +16,17 @@ import {
 import { ImAirplane, ImAlarm } from 'react-icons/im'
 import { TbPigMoney } from 'react-icons/tb'
 import { maskPhone } from '../Masks/mask'
+import { Modal } from '../Modal'
 
 export function Budgets() {
   const [selectedOption, setSelectedOption] = useState('ida')
+  const [showPopup, setShowPopup] = useState(false)
   const [phone, setPhone] = useState('')
   const {
     register,
     handleSubmit,
     watch,
+    reset,
     formState: { errors }
   } = useForm<FormData>()
 
@@ -58,12 +61,19 @@ export function Budgets() {
     celular: string
   }
 
-  const onSubmit: SubmitHandler<FormData> = (data) => {
+  const onSubmit: SubmitHandler<FormData> = async (data) => {
     console.log(data)
+    setShowPopup(true)
+    reset()
+    setPhone('')
+  }
+
+  const handleShowPopup = () => {
+    setShowPopup(false)
   }
 
   return (
-    <Container>
+    <Container id="budgets">
       <Content>
         <h2> SOLICITE O SEU ORÇAMENTO! </h2>
 
@@ -146,6 +156,8 @@ export function Budgets() {
 
             <button type="submit"> Enviar </button>
           </Data>
+
+          {showPopup && <Modal show={handleShowPopup} />}
         </Box>
 
         <CardsContainer>

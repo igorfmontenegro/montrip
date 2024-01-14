@@ -24,23 +24,23 @@ export function Header() {
   return (
     <Container scrolled={scrolled}>
       <Content>
-        <a href="#">
+        <a href="#home">
           <ImgLogo />
         </a>
 
         <NavMenu>
           <ul>
             <li>
-              <a href="#"> Home </a>
+              <a href="#home"> Home </a>
             </li>
             <li>
-              <a href="#"> Sobre </a>
+              <a href="#about"> Sobre </a>
             </li>
             <li>
-              <a href="#"> Orçamentos </a>
+              <a href="#budgets"> Orçamentos </a>
             </li>
             <li>
-              <a href="#"> Destinos </a>
+              <a href="#destiny"> Destinos </a>
             </li>
           </ul>
         </NavMenu>

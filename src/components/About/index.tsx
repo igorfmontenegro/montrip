@@ -2,7 +2,7 @@ import { Container, Content } from './About.styles'
 
 export function About() {
   return (
-    <Container>
+    <Container id="about">
       <Content>
         <h1> Bem vindo à Montrip!</h1>
         <p>
