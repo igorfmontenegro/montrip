@@ -55,20 +55,22 @@ export const Segment = styled.div`
   margin: 0 30px;
 `
 
-interface ContainerInput {
+interface ContainerInputProps {
   width: string
+  haserror?: string
 }
 
-export const ContainerInput = styled.div<ContainerInput>`
+export const ContainerInput = styled.div<ContainerInputProps>`
   margin: 0 10px;
   padding: 15px 20px;
   border-radius: 10px;
+  border: ${(props) => (props.haserror ? '1px solid #d74544' : 'none')};
+  color: ${(props) => (props.haserror ? '#d74544' : '#00405c')};
   display: flex;
   flex-direction: column;
   height: 80px;
   width: ${(props) => props.width};
   background-color: #f5f5f5;
-  color: #00405c;
   font-weight: 500;
 
   input {

@@ -1,4 +1,4 @@
-import { useState, ChangeEvent } from 'react'
+import { useState, useEffect } from 'react'
 import { useForm, SubmitHandler } from 'react-hook-form'
 import {
   Box,
@@ -20,16 +20,32 @@ import { maskPhone } from '../Masks/mask'
 export function Budgets() {
   const [selectedOption, setSelectedOption] = useState('ida')
   const [phone, setPhone] = useState('')
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors }
+  } = useForm<FormData>()
 
-  const handleOptionChange = (event: ChangeEvent<HTMLSelectElement>) => {
-    setSelectedOption(event.target.value)
-  }
+  const today = new Date()
+  const minDate = today.toISOString().split('T')[0]
+  const [minDateBack, setMinDateBack] = useState('')
 
-  const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setPhone(maskPhone(event.target.value))
-  }
+  const dataIda = watch('data_ida')
+  const celularValue = watch('celular')
+  const trechoValue = watch('trecho')
 
-  const { register, handleSubmit } = useForm<FormData>()
+  useEffect(() => {
+    setMinDateBack(dataIda)
+  }, [dataIda])
+
+  useEffect(() => {
+    setPhone(maskPhone(celularValue))
+  }, [celularValue])
+
+  useEffect(() => {
+    setSelectedOption(trechoValue)
+  }, [trechoValue])
 
   interface FormData {
     passageiros: number
@@ -42,7 +58,9 @@ export function Budgets() {
     celular: string
   }
 
-  const onSubmit: SubmitHandler<FormData> = (data) => console.log(data)
+  const onSubmit: SubmitHandler<FormData> = (data) => {
+    console.log(data)
+  }
 
   return (
     <Container>
@@ -60,18 +78,14 @@ export function Budgets() {
               <option value="5+"> Outra quantidade </option>
             </select>
 
-            <select
-              {...register('trecho')}
-              value={selectedOption}
-              onChange={handleOptionChange}
-            >
+            <select {...register('trecho')} value={selectedOption}>
               <option value="ida"> Ida </option>
               <option value="ida_e_volta"> Ida e volta </option>
             </select>
           </Option>
 
           <Segment>
-            <ContainerInput width="270px">
+            <ContainerInput width="270px" haserror={errors.origem?.type}>
               <label> Origem </label>
               <input
                 {...register('origem', { required: true })}
@@ -79,7 +93,7 @@ export function Budgets() {
                 placeholder="Cidade ou aeroporto"
               />
             </ContainerInput>
-            <ContainerInput width="270px">
+            <ContainerInput width="270px" haserror={errors.destino?.type}>
               <label> Destino </label>
               <input
                 {...register('destino', { required: true })}
@@ -87,12 +101,14 @@ export function Budgets() {
                 placeholder="Cidade ou aeroporto"
               />
             </ContainerInput>
-            <ContainerInput width="200px">
+            <ContainerInput width="200px" haserror={errors.data_ida?.type}>
               <label> Ida </label>
               <input
                 {...register('data_ida', { required: true })}
                 type="date"
                 placeholder="Selecione a data"
+                min={minDate}
+                max="2024-12-31"
               />
             </ContainerInput>
             {selectedOption === 'ida_e_volta' && (
@@ -102,13 +118,15 @@ export function Budgets() {
                   {...register('data_volta')}
                   type="date"
                   placeholder="Selecione a data"
+                  min={minDateBack}
+                  max="2024-12-31"
                 />
               </ContainerInput>
             )}
           </Segment>
 
           <Data>
-            <ContainerInput width="450px">
+            <ContainerInput width="450px" haserror={errors.email?.type}>
               <label> E-mail </label>
               <input
                 {...register('email', { required: true })}
@@ -116,12 +134,11 @@ export function Budgets() {
                 placeholder="Digite o seu e-mail"
               />
             </ContainerInput>
-            <ContainerInput width="250px">
+            <ContainerInput width="250px" haserror={errors.celular?.type}>
               <label> Celular </label>
               <input
                 {...register('celular', { required: true, minLength: 15 })}
                 value={phone}
-                onChange={handleInputChange}
                 type="tel"
                 placeholder="(xx) xxxxx-xxxx"
               />
