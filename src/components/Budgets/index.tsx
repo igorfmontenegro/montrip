@@ -1,11 +1,12 @@
 import { useState, ChangeEvent } from 'react'
-import { InputBudgets } from '../InputBudgets'
+import { useForm, SubmitHandler } from 'react-hook-form'
 import {
   Box,
   Card,
   CardIcon,
   CardsContainer,
   Container,
+  ContainerInput,
   Content,
   Data,
   Option,
@@ -14,22 +15,43 @@ import {
 
 import { ImAirplane, ImAlarm } from 'react-icons/im'
 import { TbPigMoney } from 'react-icons/tb'
+import { maskPhone } from '../Masks/mask'
 
 export function Budgets() {
   const [selectedOption, setSelectedOption] = useState('ida')
+  const [phone, setPhone] = useState('')
 
   const handleOptionChange = (event: ChangeEvent<HTMLSelectElement>) => {
     setSelectedOption(event.target.value)
   }
+
+  const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setPhone(maskPhone(event.target.value))
+  }
+
+  const { register, handleSubmit } = useForm<FormData>()
+
+  interface FormData {
+    passageiros: number
+    trecho: string
+    origem: string
+    destino: string
+    data_ida: string
+    data_volta: string
+    email: string
+    celular: number
+  }
+
+  const onSubmit: SubmitHandler<FormData> = (data) => console.log(data)
 
   return (
     <Container>
       <Content>
         <h2> SOLICITE O SEU ORÇAMENTO! </h2>
 
-        <Box>
+        <Box onSubmit={handleSubmit(onSubmit)}>
           <Option>
-            <select name="passageiros">
+            <select {...register('passageiros')}>
               <option value="1"> 01 Passageiro </option>
               <option value="2"> 02 Passageiros </option>
               <option value="3"> 03 Passageiros </option>
@@ -39,7 +61,7 @@ export function Budgets() {
             </select>
 
             <select
-              name="trecho"
+              {...register('trecho')}
               value={selectedOption}
               onChange={handleOptionChange}
             >
@@ -49,54 +71,63 @@ export function Budgets() {
           </Option>
 
           <Segment>
-            <InputBudgets
-              label="Origem"
-              type="text"
-              name="origem"
-              placeholder="Cidade ou aeroporto"
-              widthInput="270px"
-            />
-            <InputBudgets
-              label="Destino"
-              type="text"
-              name="destino"
-              placeholder="Cidade ou aeroporto"
-              widthInput="270px"
-            />
-            <InputBudgets
-              label="Ida"
-              type="text"
-              name="data_ida"
-              placeholder="Selecione a data"
-              widthInput="200px"
-            />
-            {selectedOption === 'ida_e_volta' && (
-              <InputBudgets
-                label="Volta"
+            <ContainerInput width="270px">
+              <label> Origem </label>
+              <input
+                {...register('origem')}
                 type="text"
-                name="data_volta"
-                placeholder="Selecione a data"
-                widthInput="200px"
+                placeholder="Cidade ou aeroporto"
               />
+            </ContainerInput>
+            <ContainerInput width="270px">
+              <label> Destino </label>
+              <input
+                {...register('destino')}
+                type="text"
+                placeholder="Cidade ou aeroporto"
+              />
+            </ContainerInput>
+            <ContainerInput width="200px">
+              <label> Ida </label>
+              <input
+                {...register('data_ida')}
+                type="date"
+                placeholder="Selecione a data"
+              />
+            </ContainerInput>
+            {selectedOption === 'ida_e_volta' && (
+              <ContainerInput width="200px">
+                <label> Volta </label>
+                <input
+                  {...register('data_volta')}
+                  type="date"
+                  placeholder="Selecione a data"
+                />
+              </ContainerInput>
             )}
           </Segment>
 
           <Data>
-            <InputBudgets
-              label="E-mail"
-              type="email"
-              name="email"
-              placeholder="Digite o seu e-mail"
-              widthInput="450px"
-            />
-            <InputBudgets
-              label="Celular"
-              type="number"
-              name="celular"
-              placeholder="Digite o seu celular"
-              widthInput="250px"
-            />
-            <button> Enviar </button>
+            <ContainerInput width="450px">
+              <label> E-mail </label>
+              <input
+                {...register('email')}
+                type="email"
+                placeholder="Digite o seu e-mail"
+              />
+            </ContainerInput>
+            <ContainerInput width="250px">
+              <label> Celular </label>
+              <input
+                {...register('celular')}
+                value={phone}
+                onChange={handleInputChange}
+                type="tel"
+                placeholder="(xx) xxxxx-xxxx"
+              />
+            </ContainerInput>
+
+            <button type="submit"> Enviar </button>
           </Data>
         </Box>
 

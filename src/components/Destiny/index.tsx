@@ -20,10 +20,10 @@ export function Destiny() {
         </Subtitle>
 
         <CardConteiner>
-          <CardDestiny src={RiodeJaneiroRJ} city={'Rio de Janeiro, RJ'} />
-          <CardDestiny src={Gramado} city={'Gramado, RS'} />
-          <CardDestiny src={FozdoIguacu} city={'Foz do Iguaçu, PR'} />
-          <CardDestiny src={Bonito} city={'Bonito, MS'} />
+          <CardDestiny src={RiodeJaneiroRJ} city={'Rio de Janeiro/RJ'} />
+          <CardDestiny src={Gramado} city={'Gramado/RS'} />
+          <CardDestiny src={FozdoIguacu} city={'Foz do Iguaçu/PR'} />
+          <CardDestiny src={Bonito} city={'Bonito/MS'} />
         </CardConteiner>
 
         <CardConteiner>

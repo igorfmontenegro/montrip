@@ -21,7 +21,7 @@ export const Content = styled.div`
   }
 `
 
-export const Box = styled.div`
+export const Box = styled.form`
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -53,6 +53,39 @@ export const Option = styled.div`
 export const Segment = styled.div`
   display: flex;
   margin: 0 30px;
+`
+
+interface ContainerInput {
+  width: string
+}
+
+export const ContainerInput = styled.div<ContainerInput>`
+  margin: 0 10px;
+  padding: 15px 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  height: 80px;
+  width: ${(props) => props.width};
+  background-color: #f5f5f5;
+  color: #00405c;
+  font-weight: 500;
+
+  input {
+    border: none;
+    background-color: #f5f5f5;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 5px 0px;
+
+    &::placeholder {
+      font-weight: 500;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
 `
 
 export const Data = styled.div`
