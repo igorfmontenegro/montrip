@@ -1,5 +1,5 @@
 import { CardDestiny } from '../CardDestiny'
-import { CardConteiner, Container, Content, Subtitle } from './Destiny.styles'
+import { CardContainer, Container, Content, Subtitle } from './Destiny.styles'
 
 import RiodeJaneiroRJ from '../../assets/riodejaneiro_rj.png'
 import Gramado from '../../assets/gramado.png'
@@ -19,19 +19,19 @@ export function Destiny() {
           <h3> DESTINOS IMPERDÍVEIS! </h3>
         </Subtitle>
 
-        <CardConteiner>
+        <CardContainer>
           <CardDestiny src={RiodeJaneiroRJ} city={'Rio de Janeiro/RJ'} />
           <CardDestiny src={Gramado} city={'Gramado/RS'} />
           <CardDestiny src={FozdoIguacu} city={'Foz do Iguaçu/PR'} />
           <CardDestiny src={Bonito} city={'Bonito/MS'} />
-        </CardConteiner>
+        </CardContainer>
 
-        <CardConteiner>
+        <CardContainer>
           <CardDestiny src={Londres} city={'Londres, UK'} />
           <CardDestiny src={Paris} city={'Paris, FR'} />
           <CardDestiny src={Roma} city={'Roma, IT'} />
           <CardDestiny src={Madrid} city={'Madrid, ES'} />
-        </CardConteiner>
+        </CardContainer>
       </Content>
     </Container>
   )

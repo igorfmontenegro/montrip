@@ -23,7 +23,7 @@ export const Subtitle = styled.div`
   }
 `
 
-export const CardConteiner = styled.div`
+export const CardContainer = styled.div`
   display: flex;
   margin-top: 60px;
   gap: 50px;
