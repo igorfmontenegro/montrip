@@ -1,30 +1,27 @@
-# React + TypeScript + Vite
+# 🏔️🛩️ Montrip - Agência de Viagens 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Projeto pessoal feito para um dos meus negócios, onde emito passagens aéreas com um valor mais acessível do que o modo convencional.
 
-Currently, two official plugins are available:
+## 🛠 Tecnologias
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+As seguintes ferramentas foram usadas na construção do projeto:
 
-## Expanding the ESLint configuration
+#### **Website**  ([React](https://reactjs.org/)  +  [TypeScript](https://www.typescriptlang.org/))
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+-   **Styled-Components** - de forma a auxiliar na implementação do CSS.
 
-- Configure the top-level `parserOptions` property like this:
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+## 🚀 Uso
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+O site além de apresentar a empresa, permite que o usuário solicite uma cotação de passagem com mais facilidade. Algumas observações sobre isto:
+
+1. O usuário tem a opção de selecionar quais trechos deseja: apenas ida ou ida e volta. Caso opte pelo último, o campo para preencher a data de volta é renderizado.
+2. Com o auxílio do Hook UseForm, é feita a validação dos dados antes de enviar para o nosso sistema. Caso possua algum campo em branco, o mesmo ficará vermelho.
+3. A data de volta é permitida apenas em datas posteriores á data de ida, para evitar preenchimentos errôneos e confusos.
+
+## 🚧 Manutenção
+
+Versáo mobile em andamento.
+
+
+
