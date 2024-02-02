@@ -1,6 +1,14 @@
-# 🏔️🛩️ Montrip - Agência de Viagens 
+<h1 align="center"> 🏔️🛩️ Montrip - Agência de Viagens </h1>
 
+<p align="center">
 Projeto pessoal feito para um dos meus negócios, onde emito passagens aéreas com um valor mais acessível do que o modo convencional.
+</p>
+
+<br />
+
+<p align="center">
+  <img alt="layout do site" src="https://github.com/igorfmontenegro/montrip/assets/117581201/5d9ec1fa-920e-4215-91f8-5883e491df4d" width="100%">
+</p>
 
 ## 🛠 Tecnologias
 
