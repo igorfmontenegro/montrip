@@ -12,6 +12,11 @@ export const Container = styled.section`
   @media (max-width: 1340px) {
     background-image: url();
   }
+
+  @media (max-width: 1000px) {
+    height: auto;
+    padding-bottom: 50px;
+  }
 `
 
 export const Content = styled.div`
@@ -26,7 +31,7 @@ export const Content = styled.div`
   color: #1b4a78;
 
   h1 {
-    line-height: 20vh;
+    margin: 70px 0;
     font-size: 2em;
   }
 
@@ -42,11 +47,14 @@ export const Content = styled.div`
   }
 
   @media (max-width: 1000px) {
+    align-items: center;
+
     h1 {
-      font-size: 1.9em;
+      font-size: 1.8em;
     }
     p {
-      font-size: 1.1em;
+      font-size: 1em;
+      max-width: 450px;
     }
   }
 `

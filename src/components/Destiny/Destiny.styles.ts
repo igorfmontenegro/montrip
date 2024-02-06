@@ -22,6 +22,12 @@ export const Subtitle = styled.div`
   h3 {
     font-size: 2em;
   }
+
+  @media (max-width: 764px) {
+    h3 {
+      font-size: 1.7em;
+    }
+  }
 `
 
 export const CardContainer = styled.div`
@@ -30,4 +36,8 @@ export const CardContainer = styled.div`
   margin-top: 60px;
   gap: 50px;
   justify-content: center;
+
+  @media (max-width: 764px) {
+    grid-template-columns: repeat(auto-fit, 220px);
+  }
 `
