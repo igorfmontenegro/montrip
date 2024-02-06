@@ -133,6 +133,11 @@ export const Card = styled.div`
     color: #00405c;
     width: 200px;
   }
+
+  @media (max-width: 1000px) {
+    height: 200px;
+    width: 220px;
+  }
 `
 
 export const CardIcon = styled.div`

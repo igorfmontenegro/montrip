@@ -24,9 +24,6 @@ export function Destiny() {
           <CardDestiny src={Gramado} city={'Gramado/RS'} />
           <CardDestiny src={FozdoIguacu} city={'Foz do Iguaçu/PR'} />
           <CardDestiny src={Bonito} city={'Bonito/MS'} />
-        </CardContainer>
-
-        <CardContainer>
           <CardDestiny src={Londres} city={'Londres, UK'} />
           <CardDestiny src={Paris} city={'Paris, FR'} />
           <CardDestiny src={Roma} city={'Roma, IT'} />

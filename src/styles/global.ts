@@ -11,7 +11,7 @@ export const GlobalStyles = createGlobalStyle`
 }
 
 #root{
-    height: 400vh;
+    height: auto;
     overflow-x: hidden;
     font-family: 'Poppins', sans-serif;
 }

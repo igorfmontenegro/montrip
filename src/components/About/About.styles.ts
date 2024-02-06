@@ -8,6 +8,10 @@ export const Container = styled.section`
   background-repeat: no-repeat;
 
   background-position: right;
+
+  @media (max-width: 1340px) {
+    background-image: url();
+  }
 `
 
 export const Content = styled.div`
@@ -15,10 +19,10 @@ export const Content = styled.div`
   flex-direction: column;
   justify-content: center;
 
-  max-width: 1340px;
+  max-width: 1380px;
   height: 100%;
   margin: auto;
-  padding: 0px 30px;
+  padding: 0px 50px;
   color: #1b4a78;
 
   h1 {
@@ -34,6 +38,15 @@ export const Content = styled.div`
 
     span {
       font-weight: 700;
+    }
+  }
+
+  @media (max-width: 1000px) {
+    h1 {
+      font-size: 1.9em;
+    }
+    p {
+      font-size: 1.1em;
     }
   }
 `
