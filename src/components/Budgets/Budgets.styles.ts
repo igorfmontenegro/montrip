@@ -3,6 +3,11 @@ import styled from 'styled-components'
 export const Container = styled.section`
   height: 100vh;
   background-color: #1b4a78;
+
+  @media (max-width: 900px) {
+    height: auto;
+    padding-bottom: 50px;
+  }
 `
 
 export const Content = styled.div`
@@ -111,6 +116,12 @@ export const CardsContainer = styled.div`
   width: 80%;
   margin-top: 60px;
   justify-content: space-evenly;
+
+  @media (max-width: 900px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
 `
 
 export const Card = styled.div`
