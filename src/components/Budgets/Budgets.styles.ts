@@ -23,23 +23,39 @@ export const Content = styled.div`
     color: #f9fdff;
     font-size: 2rem;
     line-height: 20vh;
+
+    @media (max-width: 550px) {
+      font-size: 1.5rem;
+    }
   }
 `
 
 export const Box = styled.form`
   display: flex;
   flex-direction: column;
+  gap: 20px;
+  padding: 30px 0;
   justify-content: space-evenly;
-  height: 300px;
-
   background-color: #fff;
   border-radius: 20px 20px;
   box-shadow: 2px 2px 4px #000;
+
+  @media (max-width: 900px) {
+    width: 500px;
+  }
+
+  @media (max-width: 550px) {
+    width: 360px;
+  }
 `
 
 export const Option = styled.div`
   display: flex;
   margin-left: 30px;
+
+  @media (max-width: 550px) {
+    margin-left: 0;
+  }
 
   select {
     background-color: #f5f5f5;
@@ -58,6 +74,12 @@ export const Option = styled.div`
 export const Segment = styled.div`
   display: flex;
   margin: 0 30px;
+
+  @media (max-width: 900px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
 `
 
 interface ContainerInputProps {
@@ -108,6 +130,12 @@ export const Data = styled.div`
     font-weight: 600;
     border-radius: 10px;
     height: 80px;
+  }
+
+  @media (max-width: 900px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
   }
 `
 

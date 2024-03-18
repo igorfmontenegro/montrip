@@ -12,6 +12,7 @@ import {
   Option,
   Segment
 } from './Budgets.styles'
+import { useMediaQuery } from 'react-responsive'
 
 import { ImAirplane, ImAlarm } from 'react-icons/im'
 import { TbPigMoney } from 'react-icons/tb'
@@ -29,6 +30,7 @@ export function Budgets() {
     reset,
     formState: { errors }
   } = useForm<FormData>()
+  const isWideScreen = useMediaQuery({ minWidth: 551 })
 
   const today = new Date()
   const minDate = today.toISOString().split('T')[0]
@@ -111,7 +113,10 @@ export function Budgets() {
                 placeholder="Cidade ou aeroporto"
               />
             </ContainerInput>
-            <ContainerInput width="200px" haserror={errors.data_ida?.type}>
+            <ContainerInput
+              width={isWideScreen ? '200px' : '270px'}
+              haserror={errors.data_ida?.type}
+            >
               <label> Ida </label>
               <input
                 {...register('data_ida', { required: true })}
@@ -122,7 +127,7 @@ export function Budgets() {
               />
             </ContainerInput>
             {selectedOption === 'ida_e_volta' && (
-              <ContainerInput width="200px">
+              <ContainerInput width={isWideScreen ? '200px' : '270px'}>
                 <label> Volta </label>
                 <input
                   {...register('data_volta')}
@@ -136,7 +141,10 @@ export function Budgets() {
           </Segment>
 
           <Data>
-            <ContainerInput width="450px" haserror={errors.email?.type}>
+            <ContainerInput
+              width={isWideScreen ? '450px' : '270px'}
+              haserror={errors.email?.type}
+            >
               <label> E-mail </label>
               <input
                 {...register('email', { required: true })}
@@ -144,7 +152,10 @@ export function Budgets() {
                 placeholder="Digite o seu e-mail"
               />
             </ContainerInput>
-            <ContainerInput width="250px" haserror={errors.celular?.type}>
+            <ContainerInput
+              width={isWideScreen ? '250px' : '270px'}
+              haserror={errors.celular?.type}
+            >
               <label> Celular </label>
               <input
                 {...register('celular', { required: true, minLength: 15 })}
