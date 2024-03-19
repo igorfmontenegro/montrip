@@ -41,4 +41,17 @@ export const Content = styled.div`
     color: #fff;
     cursor: pointer;
   }
+
+  @media (max-width: 550px) {
+    width: 350px;
+
+    p {
+      width: 300px;
+      font-size: 0.9em;
+    }
+
+    h1 {
+      font-size: 1em;
+    }
+  }
 `
