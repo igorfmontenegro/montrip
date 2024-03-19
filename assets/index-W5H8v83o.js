@@ -473,6 +473,19 @@ Valid keys: `+JSON.stringify(Object.keys(N),null,"  "));var M=x(q,_,G,te,J+"."+_
     color: #fff;
     cursor: pointer;
   }
+
+  @media (max-width: 550px) {
+    width: 350px;
+
+    p {
+      width: 300px;
+      font-size: 0.9em;
+    }
+
+    h1 {
+      font-size: 1em;
+    }
+  }
 `;function S0(e){return C.jsx(w0,{children:C.jsxs(x0,{children:[C.jsx("h1",{children:" Orçamento solicitado com sucesso! "}),C.jsx("p",{children:"Você receberá nossa resposta por e-mail e whatsapp em até 24 horas."}),C.jsx("button",{onClick:e.show,children:" Fechar "})]})})}function _0(){var k,P,E,R,j;const[e,t]=He.useState("ida"),[n,r]=He.useState(!1),[i,o]=He.useState(""),{register:l,handleSubmit:s,watch:u,reset:c,formState:{errors:v}}=l0(),m=h0.useMediaQuery({minWidth:551}),g=new Date().toISOString().split("T")[0],[w,S]=He.useState(""),O=u("data_ida"),f=u("celular"),a=u("trecho");He.useEffect(()=>{S(O)},[O]),He.useEffect(()=>{o(g0(f))},[f]),He.useEffect(()=>{t(a)},[a]);const d=async L=>{console.log(L),r(!0),c(),o("")},y=()=>{r(!1)};return C.jsx(u0,{id:"budgets",children:C.jsxs(s0,{children:[C.jsx("h2",{children:" SOLICITE O SEU ORÇAMENTO! "}),C.jsxs(a0,{onSubmit:s(d),children:[C.jsxs(c0,{children:[C.jsxs("select",{...l("passageiros"),children:[C.jsx("option",{value:"1",children:" 01 Passageiro "}),C.jsx("option",{value:"2",children:" 02 Passageiros "}),C.jsx("option",{value:"3",children:" 03 Passageiros "}),C.jsx("option",{value:"4",children:" 04 Passageiros "}),C.jsx("option",{value:"5",children:" 05 Passageiros "}),C.jsx("option",{value:"5+",children:" Outra quantidade "})]}),C.jsxs("select",{...l("trecho"),value:e,children:[C.jsx("option",{value:"ida",children:" Ida "}),C.jsx("option",{value:"ida_e_volta",children:" Ida e volta "})]})]}),C.jsxs(f0,{children:[C.jsxs(Qn,{width:"270px",haserror:(k=v.origem)==null?void 0:k.type,children:[C.jsx("label",{children:" Origem "}),C.jsx("input",{...l("origem",{required:!0}),type:"text",placeholder:"Cidade ou aeroporto"})]}),C.jsxs(Qn,{width:"270px",haserror:(P=v.destino)==null?void 0:P.type,children:[C.jsx("label",{children:" Destino "}),C.jsx("input",{...l("destino",{required:!0}),type:"text",placeholder:"Cidade ou aeroporto"})]}),C.jsxs(Qn,{width:m?"200px":"270px",haserror:(E=v.data_ida)==null?void 0:E.type,children:[C.jsx("label",{children:" Ida "}),C.jsx("input",{...l("data_ida",{required:!0}),type:"date",placeholder:"Selecione a data",min:g,max:"2024-12-31"})]}),e==="ida_e_volta"&&C.jsxs(Qn,{width:m?"200px":"270px",children:[C.jsx("label",{children:" Volta "}),C.jsx("input",{...l("data_volta"),type:"date",placeholder:"Selecione a data",min:w,max:"2024-12-31"})]})]}),C.jsxs(d0,{children:[C.jsxs(Qn,{width:m?"450px":"270px",haserror:(R=v.email)==null?void 0:R.type,children:[C.jsx("label",{children:" E-mail "}),C.jsx("input",{...l("email",{required:!0}),type:"email",placeholder:"Digite o seu e-mail"})]}),C.jsxs(Qn,{width:m?"250px":"270px",haserror:(j=v.celular)==null?void 0:j.type,children:[C.jsx("label",{children:" Celular "}),C.jsx("input",{...l("celular",{required:!0,minLength:15}),value:i,type:"tel",placeholder:"(xx) xxxxx-xxxx"})]}),C.jsx("button",{type:"submit",children:" Enviar "})]}),n&&C.jsx(S0,{show:y})]}),C.jsxs(p0,{children:[C.jsxs(Xl,{children:[C.jsx(Zl,{children:C.jsx(v0,{})}),C.jsx("p",{children:" Passagens áreas para qualquer lugar do mundo!"})]}),C.jsxs(Xl,{children:[C.jsx(Zl,{children:C.jsx(m0,{})}),C.jsx("p",{children:"Agilidade! Receba seu orçamento em poucas horas."})]}),C.jsxs(Xl,{children:[C.jsx(Zl,{children:C.jsx(y0,{})}),C.jsx("p",{children:" Viajar não precisa ser caro! Opções que cabem no seu bolso. "})]})]})]})})}const k0=le.div`
   position: relative;
   display: flex;
